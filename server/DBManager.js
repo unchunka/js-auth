@@ -35,10 +35,31 @@ module.exports = class DBManager {
 
 	}
 
+	async getUserById(id) {
+
+		return await this._makeQuery("SELECT * FROM user WHERE id = " + id);
+
+	}
+
 	async getUsers() {
 
 		return await this._makeQuery("SELECT * FROM user");
 
 	}
+
+	async registerUser(login, password) {
+
+		return await this._makeQuery("INSERT INTO user (login, password) VALUES ('" + login + "', '" + password + "')");
+
+	}
+
+	async getUserByEmail(email) {
+
+		let result = await this._makeQuery("SELECT * FROM user WHERE email = '" + email + "'");
+
+		return result[0];
+
+	}
+
 
 }

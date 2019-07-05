@@ -8,9 +8,18 @@ function submitt() {
   		}
   	};
 
-	xhr.open("POST", "http://localhost:3000/users/", false);
+	/*xhr.open("POST", "http://localhost:3000/users/", false);
 	xhr.setRequestHeader("Content-type", "application/json");
 
-	xhr.send(JSON.stringify({login:"thierry@bigsool.com",password:"qwe"}));
+	xhr.send(JSON.stringify({email:"thierry@bigsool.com",password:"qwe"}));*/
+/* * /
+	xhr.open("POST", "http://localhost:3000/users/login", false);
+	xhr.setRequestHeader("Content-type", "application/json");
 
+	xhr.send(JSON.stringify({email:"thierry@bigsool.com",password:"qwe"}));
+/* */
+	xhr.open("GET", "http://localhost:3000/users/1", false);
+	//xhr.setRequestHeader("Content-type", "application/json");
+
+	xhr.send();
 }
